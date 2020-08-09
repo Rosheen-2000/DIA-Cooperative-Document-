@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { NouseModule } from './modules/nouse/nouse.module';
+import { UserbasicinfoModule } from './modules/userbasicinfo/userbasicinfo.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { NouseModule } from './modules/nouse/nouse.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NouseModule
+    UserbasicinfoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
