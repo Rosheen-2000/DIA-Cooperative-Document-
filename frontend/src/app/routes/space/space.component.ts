@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-space',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./space.component.scss']
 })
 export class SpaceComponent implements OnInit {
-
-  constructor() { }
+  spaceId: string;
+  constructor(private route: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
+    this.route.params.subscribe((params: Params) => {
+        this.spaceId = params['id'];
+      }
+    );
   }
 
 }

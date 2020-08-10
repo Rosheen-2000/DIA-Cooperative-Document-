@@ -31,6 +31,9 @@ const routes: Routes = [
     path: 'space', component: DefaultComponent, children: [
       {path: ':id', component: SpaceComponent}
     ]
+  },
+  {
+    path: '**', redirectTo: 'dashboard/own'
   }
 ];
 

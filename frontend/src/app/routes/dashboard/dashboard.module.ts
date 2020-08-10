@@ -4,6 +4,7 @@ import {OwnComponent} from './own/own.component';
 import {UsedComponent} from './used/used.component';
 import {FavoritesComponent} from './favorites/favorites.component';
 import {DashboardRoutingModule} from './dashboard-routing.module';
+import {SharedModule} from '../../shared/shared.module';
 
 const Components = [
   OwnComponent,
@@ -14,7 +15,8 @@ const Components = [
 @NgModule({
   declarations: [...Components],
   imports: [
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    SharedModule
   ]
 })
 export class DashboardModule {

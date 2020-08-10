@@ -9,6 +9,9 @@ const Components = [
 ];
 
 @NgModule({
+  exports: [
+    ...Components
+  ],
   declarations: [...Components]
 })
 export class SharedModule {}
