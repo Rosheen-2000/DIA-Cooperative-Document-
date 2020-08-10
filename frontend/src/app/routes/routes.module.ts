@@ -4,13 +4,15 @@ import {LoginComponent} from './passport/login/login.component';
 import {RegisterComponent} from './passport/register/register.component';
 import { DocumentComponent } from './document/document.component';
 import { SpaceComponent } from './space/space.component';
+import { TrashComponent } from './trash/trash.component';
 
 
 const Components = [
   LoginComponent,
   RegisterComponent,
   DocumentComponent,
-  SpaceComponent
+  SpaceComponent,
+  TrashComponent
 ];
 
 @NgModule({

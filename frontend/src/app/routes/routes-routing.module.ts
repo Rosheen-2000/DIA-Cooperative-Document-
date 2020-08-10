@@ -7,6 +7,7 @@ import {DefaultComponent} from '../layout/default/default.component';
 import {EditorComponent} from '../layout/editor/editor.component';
 import {DocumentComponent} from './document/document.component';
 import {SpaceComponent} from './space/space.component';
+import {TrashComponent} from './trash/trash.component';
 
 const routes: Routes = [
   {
@@ -17,8 +18,8 @@ const routes: Routes = [
   },
   {
     path: '', component: DefaultComponent, children: [
-      {path: 'dashboard'},
-      {path: 'trash'}
+      {path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)},
+      {path: 'trash', component: TrashComponent}
     ]
   },
   {
