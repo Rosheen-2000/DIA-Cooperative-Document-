@@ -6,6 +6,7 @@ import { SafetyPipe } from './core/html/safety.pipe';
 import {RoutesModule} from './routes/routes.module';
 import {LayoutModule} from './layout/layout.module';
 import {RouterModule} from '@angular/router';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {RouterModule} from '@angular/router';
     BrowserModule,
     RoutesModule,
     LayoutModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
