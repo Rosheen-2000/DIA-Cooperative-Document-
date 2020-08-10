@@ -6,6 +6,7 @@ import {RegisterComponent} from './passport/register/register.component';
 import {DefaultComponent} from '../layout/default/default.component';
 import {EditorComponent} from '../layout/editor/editor.component';
 import {DocumentComponent} from './document/document.component';
+import {SpaceComponent} from './space/space.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,11 @@ const routes: Routes = [
   {
     path: 'docs', component: EditorComponent, children: [
       {path: ':id', component: DocumentComponent}
+    ]
+  },
+  {
+    path: 'space', component: DefaultComponent, children: [
+      {path: ':id', component: SpaceComponent}
     ]
   }
 ];
