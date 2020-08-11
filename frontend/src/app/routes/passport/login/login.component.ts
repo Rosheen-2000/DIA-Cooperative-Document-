@@ -25,6 +25,15 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     console.log(this.form.value);
-    // this.passwordService.login();
+    this.passwordService.login(null, null).subscribe(
+      (res) => {
+        if (res.msg === 'true') {
+          console.log(res.token);
+        }
+      },
+      error => {
+        console.log('password not match');
+      }
+    );
   }
 }
