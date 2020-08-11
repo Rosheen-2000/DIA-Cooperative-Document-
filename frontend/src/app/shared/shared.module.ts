@@ -1,8 +1,9 @@
 import {NgModule} from '@angular/core';
 
 import {LogoComponent} from './logo/logo.component';
-import { DocItemComponent } from './doc-item/doc-item.component';
-import { FileSystemComponent } from './file-system/file-system.component';
+import {DocItemComponent} from './doc-item/doc-item.component';
+import {FileSystemComponent} from './file-system/file-system.component';
+import {NzButtonModule} from 'ng-zorro-antd';
 
 const Components = [
   LogoComponent,
@@ -14,6 +15,7 @@ const Components = [
   exports: [
     ...Components
   ],
-  declarations: [...Components]
+  declarations: [...Components],
 })
-export class SharedModule {}
+export class SharedModule {
+}
