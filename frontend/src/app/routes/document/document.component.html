@@ -1,9 +1,9 @@
-<h1>TinyMCE 5 Angular Demo</h1>
+<h1>TinyMCE Demo</h1>
 
-
-<form>
+<form [formGroup]="form">
   <editor
     apiKey="pzsbp1xb6j13dd4aduwebi7815hzj1upr7v42ojpcbc8c7pu"
     [init]="config"
+    formControlName="content"
   ></editor>
 </form>

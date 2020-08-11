@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Form, FormControl} from '@angular/forms';
+import {Form, FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-document',
@@ -24,13 +24,15 @@ export class DocumentComponent implements OnInit {
 
   content: string;
 
-  form: FormControl;
-  constructor() {
+  form: FormGroup;
+  constructor(private fb: FormBuilder) {
   }
 
   ngOnInit(): void {
     this.content = 'initial value';
-    this.form = new FormControl();
+    this.form = this.fb.group({
+      content: '由模版新建文档'
+    });
   }
 
 }
