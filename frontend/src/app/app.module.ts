@@ -13,7 +13,7 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { zh_CN } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
-import {HeaderInterceptor} from './core/net/header.interceptor';
+import {DefaultInterceptor} from './core/net/default.interceptor';
 
 registerLocaleData(zh);
 
@@ -34,7 +34,7 @@ registerLocaleData(zh);
   ],
   providers: [
     { provide: NZ_I18N, useValue: zh_CN },
-    { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: DefaultInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
