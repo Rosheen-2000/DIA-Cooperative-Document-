@@ -5,7 +5,9 @@ import {PassportComponent} from './passport/passport.component';
 import {RouterModule} from '@angular/router';
 import { HeaderComponent } from './default/header/header.component';
 import { SidebarComponent } from './default/sidebar/sidebar.component';
-import {NgZorroModule} from '../shared/ng-zorro.module';
+import {NgZorroAntdModule} from 'ng-zorro-antd';
+import {FormsModule} from '@angular/forms';
+import {SharedModule} from '../shared/shared.module';
 
 const Components = [
   DefaultComponent,
@@ -19,7 +21,7 @@ const DefaultComponents = [
 ];
 
 @NgModule({
-  imports: [RouterModule, NgZorroModule],
+  imports: [RouterModule, NgZorroAntdModule, FormsModule, SharedModule],
   declarations: [...Components, ...DefaultComponents]
 })
 export class LayoutModule {}

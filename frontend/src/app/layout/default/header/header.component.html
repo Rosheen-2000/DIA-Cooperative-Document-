@@ -1,7 +1,17 @@
-<p>header</p>
-<p>团队空间</p>
-<ul>
+<nz-row class="row">
+  <nz-col nzSpan="1">
+    <app-logo></app-logo>
+  </nz-col>
+  <nz-col nzOffset="4">
+    <nz-select nzSize="large" style="min-width: 100px" nzPlaceHolder="团队空间"
+               [(ngModel)]="value" (ngModelChange)="onChanged($event)">
+      <nz-option routerLink="/space/1" nzValue="1" nzLabel="团队1"></nz-option>
+      <nz-option nzValue="2" nzLabel="团队2"></nz-option>
+    </nz-select>
+  </nz-col>
+</nz-row>
+
+<nz-dropdown-menu #menu="nzDropdownMenu">
   <li><a routerLink="/space/1">团队1</a></li>
   <li><a routerLink="/space/2">团队2</a></li>
-</ul>
-<p>---------</p>
+</nz-dropdown-menu>

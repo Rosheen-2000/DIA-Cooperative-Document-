@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 
 @Component({
@@ -13,7 +13,7 @@ export class SpaceComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-        this.spaceId = params['id'];
+        this.spaceId = params.id;
       }
     );
   }

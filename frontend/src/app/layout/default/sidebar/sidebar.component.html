@@ -1,11 +1,14 @@
-<p>sidebar</p>
-<p>工作台</p>
-<ul>
-  <li><a routerLink="/dashboard/own">我创建的</a></li>
-  <li><a routerLink="/dashboard/favorites">我收藏的</a></li>
-  <li><a routerLink="/dashboard/used">最近使用</a></li>
+<ul nz-menu nzMode="inline">
+  <li nz-menu-group nzTitle="工作台">
+    <ul>
+      <li nz-menu-item nzMatchRouter><a routerLink="/dashboard/own">我创建的</a></li>
+      <li nz-menu-item nzMatchRouter><a routerLink="/dashboard/favorites">我收藏的</a></li>
+      <li nz-menu-item nzMatchRouter><a routerLink="/dashboard/used">最近使用</a></li>
+    </ul>
+  </li>
+  <li nz-menu-group nzTitle="其他">
+    <ul>
+      <li nz-menu-item nzMatchRouter><a routerLink="/trash">回收站</a></li>
+    </ul>
+  </li>
 </ul>
-<ul>
-  <li><a routerLink="/trash">回收站</a></li>
-</ul>
-<p>--------</p>
