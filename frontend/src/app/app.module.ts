@@ -1,8 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { SafetyPipe } from './core/html/safety.pipe';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppComponent} from './app.component';
+import {SafetyPipe} from './core/html/safety.pipe';
 import {RoutesModule} from './routes/routes.module';
 import {LayoutModule} from './layout/layout.module';
 import {RouterModule} from '@angular/router';
@@ -23,4 +22,5 @@ import {SharedModule} from './shared/shared.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
