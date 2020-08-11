@@ -1,1 +1,18 @@
-<p>login works!</p>
+<div class="outer">
+    <div class="login_form">
+        <div class="form_head">
+            <span>登 录</span>
+        </div>
+        <div class="form_main">
+            <input nz-input [(ngModel)]="username" placeholder="  用户名">
+            <br>
+            <input nz-input [(ngModel)]="password" placeholder="  密码">
+        </div>
+        <div class="form_bottom">
+            <button nz-button nzType="primary">登录</button>
+            <br>
+            <a nz-button nzType="link">找回密码</a>
+        </div>
+    </div>
+</div>
+
