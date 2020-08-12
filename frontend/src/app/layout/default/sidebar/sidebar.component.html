@@ -1,14 +1,22 @@
-<ul nz-menu nzMode="inline">
-  <li nz-menu-group nzTitle="工作台">
+<ul nz-menu nzMode="vertical">
+
+  <li nz-menu-item nzMatchRouter><a routerLink="/dashboard/own">我创建的</a></li>
+  <li nz-menu-item nzMatchRouter><a routerLink="/dashboard/favorites">我收藏的</a></li>
+  <li nz-menu-item nzMatchRouter><a routerLink="/dashboard/used">最近使用</a></li>
+
+  <nz-divider></nz-divider>
+
+  <li nz-menu-item nzMatchRouter><a routerLink="/trash">回收站</a></li>
+  <li nz-menu-item nzMatchRouter><a routerLink="/desktop">我的桌面</a></li>
+  <li nz-submenu nzTitle="团队空间">
     <ul>
-      <li nz-menu-item nzMatchRouter><a routerLink="/dashboard/own">我创建的</a></li>
-      <li nz-menu-item nzMatchRouter><a routerLink="/dashboard/favorites">我收藏的</a></li>
-      <li nz-menu-item nzMatchRouter><a routerLink="/dashboard/used">最近使用</a></li>
+      <li nz-menu-item nzMatchRouter *ngFor="let i of spacesService.spaces">
+        <a [routerLink]="'/space/' + i.spaceId">{{i.spaceName}}</a>
+      </li>
     </ul>
   </li>
-  <li nz-menu-group nzTitle="其他">
-    <ul>
-      <li nz-menu-item nzMatchRouter><a routerLink="/trash">回收站</a></li>
-    </ul>
-  </li>
+
+  <nz-divider></nz-divider>
+
+  <li nz-menu-item nzMatchRouter><a routerLink="/feedback">联系我们</a></li>
 </ul>
