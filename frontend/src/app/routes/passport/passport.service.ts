@@ -26,7 +26,7 @@ export class PassportService {
 
   }
 
-  public register(): void {
+  public register(uname:string, pwd:string, pwd_confirm:string): void {
 
   }
 }

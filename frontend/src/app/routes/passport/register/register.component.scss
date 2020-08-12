@@ -1,0 +1,40 @@
+.outer {
+    height: 100%;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.login_form {
+    height: auto;
+    width: 100%;
+    position:relative;
+    top:280px;
+}
+
+.form_head {
+    height: auto;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+
+    font-size: larger;
+    font-weight: bolder;
+}
+
+input {
+    // height: 30px;
+    // width: 100%;
+    margin-bottom: 30px;
+}
+
+.form_bottom {
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+
+button {
+//     height: 30px;
+//     width: 120px;
+    margin-bottom: 15px;
+}
