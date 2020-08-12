@@ -5,6 +5,7 @@ import {UsedComponent} from './used/used.component';
 import {FavoritesComponent} from './favorites/favorites.component';
 import {DashboardRoutingModule} from './dashboard-routing.module';
 import {SharedModule} from '../../shared/shared.module';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 const Components = [
   OwnComponent,
@@ -16,7 +17,8 @@ const Components = [
   declarations: [...Components],
   imports: [
     DashboardRoutingModule,
-    SharedModule
+    SharedModule,
+    NgZorroAntdModule
   ]
 })
 export class DashboardModule {
