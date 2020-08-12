@@ -1,1 +1,28 @@
-<p>register works!</p>
+<div class="outer">
+    <form nz-form [formGroup]="form" class="login_form" (ngSubmit)="onSubmit()">
+        <div class="form_head">
+            <span>注  册</span>
+        </div>
+      <nz-form-item>
+        <nz-form-control>
+            <input nz-input formControlName="username" placeholder="  用户名">
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+            <input nz-input formControlName="password" type="password" placeholder="  密码">
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+            <input nz-input formControlName="pwd_confirm" type="password" placeholder="  重复密码">
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="form_bottom">
+          <button nz-button nzType="primary" type="submit">注册</button>
+          <br>
+          <a nz-button nzType="link">已有账号?前去登录</a>
+      </nz-form-item>
+    </form>
+</div>
+
