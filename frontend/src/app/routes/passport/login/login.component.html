@@ -15,9 +15,10 @@
       </nz-form-item>
       <nz-form-item class="form_bottom">
           <button nz-button nzType="primary" type="submit">登录</button>
+          <button nz-button nzType="default" [routerLink]="'/passport/register'">注册</button>
           <br>
-          <a nz-button nzType="link">找回密码</a>
+          <!-- TODO 找回密码页 -->
+          <a nz-button nzType="link" (click)="notfinished()">找回密码</a>
       </nz-form-item>
     </form>
 </div>
-

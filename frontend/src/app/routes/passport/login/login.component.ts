@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {PassportService} from '../passport.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private passwordService: PassportService
+    private passwordService: PassportService,
+    private message: NzMessageService,
   ) { }
 
   ngOnInit(): void {
@@ -35,5 +37,9 @@ export class LoginComponent implements OnInit {
         console.log('password not match');
       }
     );
+  }
+
+  notfinished(): void {
+    this.message.info('找回密码功能锐意制作中');
   }
 }
