@@ -135,14 +135,14 @@ def my_test():
     print(User.objects.order_by('?')[:2].first())
 
 def encrypt(src):
-    print(src)
+    # print(src)
     value = signing.dumps(src)
-    print(value)
+    # print(value)
     return value
 
 def decrypt(value):
-    print(value)
+    # print(value)
     src = signing.loads(value)
-    print(src)
+    # print(src)
     return src
 

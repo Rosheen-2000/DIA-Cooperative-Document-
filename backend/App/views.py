@@ -26,3 +26,9 @@ def login(request):
 	# print(result)
 	return JsonResponse({'msg': msg, 'token': value})
 	# return render(request, 'register.html', )
+
+
+def check_uname(request):
+	name = request.POST.get('uname')
+	res = api.check_uname(name)
+	return JsonResponse({'res':res})
