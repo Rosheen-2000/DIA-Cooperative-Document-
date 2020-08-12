@@ -9,6 +9,8 @@ import { TrashComponent } from './trash/trash.component';
 import {EditorModule, TINYMCE_SCRIPT_SRC} from '@tinymce/tinymce-angular';
 import {NgZorroAntdModule, NzFormModule} from 'ng-zorro-antd';
 import { FindbackComponent } from './passport/findback/findback.component';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { CommonModule } from '@angular/common'; 
 
 
 const Components = [
@@ -26,7 +28,9 @@ const Components = [
     FormsModule,
     EditorModule,
     ReactiveFormsModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    NzAlertModule,
+    CommonModule,
   ],
   providers: [
     { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }

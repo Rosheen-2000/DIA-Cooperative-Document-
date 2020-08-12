@@ -15,11 +15,15 @@
       </nz-form-item>
       <nz-form-item>
         <nz-form-control>
-            <input nz-input formControlName="pwd_confirm" type="password" placeholder="  重复密码">
+          <!-- TODO 样式调整 -->
+            <input nz-input formControlName="pwd_confirm" type="password" placeholder="  重复密码" (keyup)="checkPwdConsist($event)">
+            <div class="alert">
+              <nz-alert nzType="error" nzMessage="两次输入密码不一致" *ngIf="pwd_consist===false"></nz-alert>
+            </div>
         </nz-form-control>
       </nz-form-item>
       <nz-form-item class="form_bottom">
-          <button nz-button nzType="primary" type="submit">注册</button>
+          <button nz-button nzType="primary" type="submit" [disabled]="!pwd_consist">注册</button>
           <br>
           <a nz-button nzType="link" [routerLink]="'/passport/login'">已有账号?前去登录</a>
       </nz-form-item>

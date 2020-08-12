@@ -10,6 +10,7 @@ import {PassportService} from '../passport.service';
 export class RegisterComponent implements OnInit {
 
   public form: FormGroup;
+  public pwd_consist: boolean;
 
   constructor(
     private fb: FormBuilder,
@@ -27,16 +28,25 @@ export class RegisterComponent implements OnInit {
   // TODO 注册功能补全
   onSubmit(): void {
     console.log(this.form.value);
-    // this.passwordService.register().subscribe(
-    //   (res) => {
-    //     if (res.msg === 'true') {
-    //       console.log(res.token);
-    //     }
-    //   },
-    //   error => {
-    //     console.log('password not match');
-    //   }
-    // );
+    this.passwordService.register(null, null).subscribe(
+      (res) => {
+        if (res.msg === 'true') {
+          console.log(res.token);
+        }
+      },
+      error => {
+        console.log('password not match');
+      }
+    );
+  }
+
+  checkPwdConsist(event: any): void {
+    if (this.form.value.password === this.form.value.pwd_confirm && this.form.value.password !== "") {
+      this.pwd_consist = true;
+    }
+    else {
+      this.pwd_consist = false;
+    }
   }
 
 }

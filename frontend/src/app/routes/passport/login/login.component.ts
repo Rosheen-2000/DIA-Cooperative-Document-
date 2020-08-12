@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
       },
       error => {
         console.log('password not match');
+        this.message.create('error', "登录失败，请检查用户名或密码");
       }
     );
   }

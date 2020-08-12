@@ -26,7 +26,12 @@ export class PassportService {
 
   }
 
-  public register(uname:string, pwd:string, pwd_confirm:string): void {
-
+  public register(uname: string, pwd: string): Observable<{ msg: string, token: string }> {
+    return this.http.post<{
+      msg: string, token: string
+    }>(this.baseUrl + 'passport/register', {
+      uname,
+      pwd
+    });
   }
 }
