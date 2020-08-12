@@ -38,10 +38,15 @@ export class LoginComponent implements OnInit {
           this.message.create('success', "欢迎回来，"+this.form.value.username);
           this.router.navigateByUrl("");
         }
+        else {
+          console.log('password not match');
+          this.message.create('error', "登录失败，请检查用户名或密码");
+          this.form.value.password = "";
+        }
       },
       error => {
-        console.log('password not match');
-        this.message.create('error', "登录失败，请检查用户名或密码");
+        console.log('error');
+        this.message.create('error', "发生错误，请稍后重试");
         this.form.value.password = "";
       }
     );
