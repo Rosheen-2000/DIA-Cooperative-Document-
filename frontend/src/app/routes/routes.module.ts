@@ -8,6 +8,10 @@ import { SpaceComponent } from './space/space.component';
 import { TrashComponent } from './trash/trash.component';
 import {EditorModule, TINYMCE_SCRIPT_SRC} from '@tinymce/tinymce-angular';
 import {NgZorroAntdModule, NzFormModule} from 'ng-zorro-antd';
+import { DesktopComponent } from './desktop/desktop.component';
+import { FolderComponent } from './folder/folder.component';
+import {CommonModule} from '@angular/common';
+import {SharedModule} from '../shared/shared.module';
 
 
 const Components = [
@@ -15,7 +19,9 @@ const Components = [
   RegisterComponent,
   DocumentComponent,
   SpaceComponent,
-  TrashComponent
+  TrashComponent,
+  DesktopComponent,
+  FolderComponent
 ];
 
 @NgModule({
@@ -25,7 +31,9 @@ const Components = [
     FormsModule,
     EditorModule,
     ReactiveFormsModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    CommonModule,
+    SharedModule
   ],
   providers: [
     { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
