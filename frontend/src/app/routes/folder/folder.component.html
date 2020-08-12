@@ -1,0 +1,24 @@
+<div *ngIf="isRoot">
+  <nz-breadcrumb>
+    <nz-breadcrumb-item>
+      {{rootName}}
+    </nz-breadcrumb-item>
+  </nz-breadcrumb>
+</div>
+<div *ngIf="!isRoot">
+  <nz-breadcrumb>
+    <nz-breadcrumb-item *ngFor="let p of path">
+      {{p.Name}}
+    </nz-breadcrumb-item>
+  </nz-breadcrumb>
+</div>
+
+<div>
+  <app-folder-item *ngFor="let folder of subFolders"
+                   [folderId]="folder.Id" [folderName]="folder.Name"></app-folder-item>
+</div>
+
+<div>
+  <app-doc-item *ngFor="let file of subFiles"
+                [fileId]="file.Id" [fileName]="file.Name"></app-doc-item>
+</div>

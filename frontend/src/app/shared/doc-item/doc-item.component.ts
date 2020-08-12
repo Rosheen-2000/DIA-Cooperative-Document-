@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-doc-item',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./doc-item.component.scss']
 })
 export class DocItemComponent implements OnInit {
+  @Input() public fileName: string;
+  @Input() public fileId: string;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  navigate(): void {
+    this.router.navigate(['/docs/' + this.fileId]).then();
   }
 
 }

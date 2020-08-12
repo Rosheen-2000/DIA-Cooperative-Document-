@@ -8,6 +8,9 @@ import { SpaceComponent } from './space/space.component';
 import { TrashComponent } from './trash/trash.component';
 import {EditorModule, TINYMCE_SCRIPT_SRC} from '@tinymce/tinymce-angular';
 import {NgZorroAntdModule, NzFormModule} from 'ng-zorro-antd';
+import { DesktopComponent } from './desktop/desktop.component';
+import { FolderComponent } from './folder/folder.component';
+import {SharedModule} from '../shared/shared.module';
 import { FindbackComponent } from './passport/findback/findback.component';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { CommonModule } from '@angular/common'; 
@@ -18,7 +21,9 @@ const Components = [
   RegisterComponent,
   DocumentComponent,
   SpaceComponent,
-  TrashComponent
+  TrashComponent,
+  DesktopComponent,
+  FolderComponent
 ];
 
 @NgModule({
@@ -29,6 +34,7 @@ const Components = [
     EditorModule,
     ReactiveFormsModule,
     NgZorroAntdModule,
+    SharedModule,
     NzAlertModule,
     CommonModule,
   ],

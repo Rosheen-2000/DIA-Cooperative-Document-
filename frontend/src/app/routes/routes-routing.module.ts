@@ -8,6 +8,8 @@ import {EditorComponent} from '../layout/editor/editor.component';
 import {DocumentComponent} from './document/document.component';
 import {SpaceComponent} from './space/space.component';
 import {TrashComponent} from './trash/trash.component';
+import {DesktopComponent} from './desktop/desktop.component';
+import {FolderComponent} from './folder/folder.component';
 
 const routes: Routes = [
   {
@@ -20,7 +22,9 @@ const routes: Routes = [
     path: '', component: DefaultComponent, children: [
       {path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)},
       {path: 'trash', component: TrashComponent},
-      {path: 'space/:id', component: SpaceComponent}
+      {path: 'space/:id', component: SpaceComponent},
+      {path: 'desktop', component: DesktopComponent},
+      {path: 'folder/:id', component: FolderComponent}
     ]
   },
   {
