@@ -1,2 +1,6 @@
-<i nz-icon nzType="folder" nzTheme="outline" (click)="navigate()"></i>
-<a (click)="navigate()">{{folderName}}</a>
+<div class="folderButton">
+  <button nz-button nzType="primary" (click)="navigate()">
+    <i nz-icon nzType="folder"></i>
+    <p class="folderName">{{folderName}}</p>
+  </button>
+</div>

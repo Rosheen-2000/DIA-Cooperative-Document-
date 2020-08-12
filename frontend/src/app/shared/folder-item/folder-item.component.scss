@@ -1,0 +1,25 @@
+.folderButton {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin: 10px;
+  box-shadow: -5px 5px 3px #909090;
+}
+
+.folderName {
+  color: #707070;
+  font-size: 14px;
+}
+
+[nz-button] {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+[nz-icon] {
+  margin-top: 5px;
+  font-size: 60px;
+  color: #707070;
+}

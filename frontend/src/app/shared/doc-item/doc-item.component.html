@@ -1,2 +1,6 @@
-<i nz-icon nzType="file" nzTheme="outline" (click)="navigate()"></i>
-<a (click)="navigate()">{{fileName}}</a>
+<div class="docButton">
+  <button nz-button nzType="primary" (click)="navigate()">
+    <i nz-icon nzType="file"></i>
+    <p class="docName">{{fileName}}</p>
+  </button>
+</div>
