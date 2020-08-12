@@ -12,7 +12,7 @@ export class PassportService {
 
   constructor(
     private http: HttpClient,
-    private jwtHelperService: JwtHelperService,
+    // private jwtHelperService: JwtHelperService,
   ) {
     this.baseUrl = environment.baseUrl;
   }
@@ -24,12 +24,12 @@ export class PassportService {
   }
 
   public login(uname: string, pwd: string): Observable<{ msg: string, token: string }> {
+    const i = new FormData();
+    i.set('uname', uname);
+    i.set('pwd', pwd);
     return this.http.post<{
       msg: string, token: string
-    }>(this.baseUrl + 'passport/login', {
-      uname,
-      pwd
-    });
+    }>(this.baseUrl + 'password/login/', i);
   }
 
   public logout(): void {
@@ -47,7 +47,7 @@ export class PassportService {
 
   // TODO decode?
   public decodeUserFromToken(token): any {
-    return this.jwtHelperService.decodeToken(token);
+    // return this.jwtHelperService.decodeToken(token);
   }
 
 }
