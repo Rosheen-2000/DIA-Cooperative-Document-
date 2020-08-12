@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {Observable} from 'rxjs';
-import { JwtHelperService } from '@auth0/angular-jwt';
+// import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class PassportService {
 
   constructor(
     private http: HttpClient,
-    private jwtHelperService: JwtHelperService,
+    // private jwtHelperService: JwtHelperService,
   ) {
     this.baseUrl = environment.baseUrl;
   }
@@ -45,9 +45,9 @@ export class PassportService {
     });
   }
 
-  // TODO decode?
-  public decodeUserFromToken(token): any {
-    return this.jwtHelperService.decodeToken(token);
-  }
+  // 暂不从token中获取数据
+  // public decodeUserFromToken(token): any {
+  //   return this.jwtHelperService.decodeToken(token);
+  // }
 
 }

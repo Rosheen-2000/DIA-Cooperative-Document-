@@ -40,10 +40,16 @@ export class RegisterComponent implements OnInit {
           this.message.create('success', "欢迎，"+this.form.value.username);
           this.router.navigateByUrl("");
         }
+        else {
+          console.log('fail');
+          this.message.create('error', "注册失败，请稍后重试");
+          this.form.value.password = "";
+          this.form.value.pwd_confirm = "";
+        }
       },
       error => {
         console.log('fail');
-        this.message.create('error', "注册失败，请稍后重试");
+        this.message.create('error', "发生错误，请稍后重试");
         this.form.value.password = "";
         this.form.value.pwd_confirm = "";
       }
