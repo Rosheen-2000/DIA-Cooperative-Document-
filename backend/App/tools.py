@@ -1,6 +1,7 @@
 import random, string
 from .models import User, DocContent, Doc, DocTemplate, Browse, Favorite, Team
 from .models import TeamMember, DocPower, Comment, Message
+from django.core import signing
 
 
 # random.seed(1000)
@@ -132,3 +133,16 @@ def add_Message():
 
 def my_test():
     print(User.objects.order_by('?')[:2].first())
+
+def encrypt(src):
+    print(src)
+    value = signing.dumps(src)
+    print(value)
+    return value
+
+def decrypt(value):
+    print(value)
+    src = signing.loads(value)
+    print(src)
+    return src
+
