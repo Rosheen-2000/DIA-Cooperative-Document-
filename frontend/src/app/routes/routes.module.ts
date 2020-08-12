@@ -10,8 +10,10 @@ import {EditorModule, TINYMCE_SCRIPT_SRC} from '@tinymce/tinymce-angular';
 import {NgZorroAntdModule, NzFormModule} from 'ng-zorro-antd';
 import { DesktopComponent } from './desktop/desktop.component';
 import { FolderComponent } from './folder/folder.component';
-import {CommonModule} from '@angular/common';
 import {SharedModule} from '../shared/shared.module';
+import { FindbackComponent } from './passport/findback/findback.component';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { CommonModule } from '@angular/common'; 
 
 
 const Components = [
@@ -25,15 +27,16 @@ const Components = [
 ];
 
 @NgModule({
-  declarations: [...Components],
+  declarations: [...Components, FindbackComponent],
   imports: [
     RoutesRoutingModule,
     FormsModule,
     EditorModule,
     ReactiveFormsModule,
     NgZorroAntdModule,
+    SharedModule,
+    NzAlertModule,
     CommonModule,
-    SharedModule
   ],
   providers: [
     { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
