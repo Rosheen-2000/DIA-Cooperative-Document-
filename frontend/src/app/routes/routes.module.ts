@@ -8,6 +8,7 @@ import { SpaceComponent } from './space/space.component';
 import { TrashComponent } from './trash/trash.component';
 import {EditorModule, TINYMCE_SCRIPT_SRC} from '@tinymce/tinymce-angular';
 import {NgZorroAntdModule, NzFormModule} from 'ng-zorro-antd';
+import { FindbackComponent } from './passport/findback/findback.component';
 
 
 const Components = [
@@ -19,7 +20,7 @@ const Components = [
 ];
 
 @NgModule({
-  declarations: [...Components],
+  declarations: [...Components, FindbackComponent],
   imports: [
     RoutesRoutingModule,
     FormsModule,
