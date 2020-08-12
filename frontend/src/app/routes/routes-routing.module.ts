@@ -28,8 +28,8 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'docs', component: EditorComponent, children: [
-      {path: ':id', component: DocumentComponent}
+    path: '', component: EditorComponent, children: [
+      {path: 'docs/:id', component: DocumentComponent}
     ]
   },
   {
