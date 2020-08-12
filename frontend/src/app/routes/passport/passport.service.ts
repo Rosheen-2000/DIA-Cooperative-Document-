@@ -13,6 +13,12 @@ export class PassportService {
     this.baseUrl = environment.baseUrl;
   }
 
+  public checkUsernameValid(uname: string): Observable<{ res: string }> {
+    return this.http.post<{
+      res: string
+    }>(this.baseUrl + 'passport/check', {uname});
+  }
+
   public login(uname: string, pwd: string): Observable<{ msg: string, token: string }> {
     return this.http.post<{
       msg: string, token: string

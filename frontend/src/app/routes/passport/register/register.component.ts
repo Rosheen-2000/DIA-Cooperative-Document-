@@ -11,6 +11,7 @@ export class RegisterComponent implements OnInit {
 
   public form: FormGroup;
   public pwd_consist: boolean;
+  public uname_valid: boolean;
 
   constructor(
     private fb: FormBuilder,
@@ -38,6 +39,19 @@ export class RegisterComponent implements OnInit {
         console.log('password not match');
       }
     );
+  }
+
+  checkUnameValid(): void {
+    this.passwordService.checkUsernameValid(this.form.value.username).subscribe(
+      (res) => {
+        if (res.res === 'true') {
+          this.uname_valid = true;
+        }
+        else {
+          this.uname_valid = false;
+        }
+      }
+    )
   }
 
   checkPwdConsist(event: any): void {
