@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {PassportService} from '../passport.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +17,9 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private passwordService: PassportService
+    private passwordService: PassportService,
+    private message: NzMessageService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -26,17 +30,22 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  // TODO 注册功能补全
   onSubmit(): void {
     console.log(this.form.value);
-    this.passwordService.register(null, null).subscribe(
+    this.passwordService.register(this.form.value.username, this.form.value.password).subscribe(
       (res) => {
         if (res.msg === 'true') {
           console.log(res.token);
+          localStorage.setItem("token", res.token);
+          this.message.create('success', "欢迎，"+this.form.value.username);
+          this.router.navigateByUrl("");
         }
       },
       error => {
-        console.log('password not match');
+        console.log('fail');
+        this.message.create('error', "注册失败，请稍后重试");
+        this.form.value.password = "";
+        this.form.value.pwd_confirm = "";
       }
     );
   }
