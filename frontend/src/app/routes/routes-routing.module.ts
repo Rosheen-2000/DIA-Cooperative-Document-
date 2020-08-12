@@ -19,17 +19,13 @@ const routes: Routes = [
   {
     path: '', component: DefaultComponent, children: [
       {path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)},
-      {path: 'trash', component: TrashComponent}
+      {path: 'trash', component: TrashComponent},
+      {path: 'space/:id', component: SpaceComponent}
     ]
   },
   {
     path: 'docs', component: EditorComponent, children: [
       {path: ':id', component: DocumentComponent}
-    ]
-  },
-  {
-    path: 'space', component: DefaultComponent, children: [
-      {path: ':id', component: SpaceComponent}
     ]
   },
   {
