@@ -26,10 +26,12 @@
             </div>
         </nz-form-control>
       </nz-form-item>
-      <nz-form-item class="form_bottom">
-          <button nz-button nzType="primary" type="submit" [disabled]="!pwd_consist || !uname_valid">注册</button>
+      <nz-form-item class="form_bottom" style="margin-bottom: 15px;">
+          <div class="form_head" style="margin-bottom: 0;">
+            <button nz-button nzType="primary" type="submit" [disabled]="!pwd_consist || !uname_valid">注册</button>
+          </div>
           <br>
-          <a nz-button nzType="link" [routerLink]="'/passport/login'">已有账号?前去登录</a>
+          <p class="a"><a nz-button nzType="link" [routerLink]="'/passport/login'" style="font-size: 12px;">已有账号?前去登录</a></p>
       </nz-form-item>
     </form>
 </div>
